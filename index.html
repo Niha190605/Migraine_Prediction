@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migraine Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Migraine Prediction System</h1>
+        <p>This system predicts the type of migraine based on the following parameters:</p>
+        <ul>
+            <li><strong>Parameter 1:</strong> Age</li>
+            <li><strong>Parameter 2:</strong> Duration</li>
+            <li><strong>Parameter 3:</strong> Frequency</li>
+            <li><strong>Parameter 4:</strong> Location</li>
+            <li><strong>Parameter 5:</strong> Character</li>
+            <li><strong>Parameter 5:</strong> Intensity</li>
+            <!-- Add more parameters as needed -->
+        </ul>
+        <a href="/predict" class="btn">Go to Prediction Page</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Migraine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict Migraine Type</h1>
+        <form action="/predict" method="POST">
+            <label for="Age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="Duration">Duration (duration of headache):</label>
+            <input type="number" id="Duration" name="Duration" required>
+
+            <label for="Frequency">Frequency  (no of times attack occur in a day):</label>
+            <input type="number" id="Frequency" name="Frequency" required>
+
+            <label for="Location">Location (0 for no pain, 1 for one sided headache and 2 for both side headache):</label>
+            <input type="number" id="Location" name="Location" min="0" max="2" required>
+
+            <label for="Character">Character (0 for no pain, 1 for throbbing pain and 2 for continuous pain):</label>
+            <input type="number" id="Character" name="Character" min="0" max="2" required>
+
+            <label for="Intensity">Intensity (1-min pain to 3-max pain):</label>
+            <input type="number" id="Intensity" name="Intensity" min="1" max="3" required>
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <h2>Prediction Result:</h2>
+            <p>The predicted migraine type is: <strong>{{ prediction }}</strong></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
